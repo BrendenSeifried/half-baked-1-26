@@ -11,17 +11,18 @@ const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
+
 // set state for how many times the user changes the head, middle, and bottom
 let headCount = 0;
 let middleCount = 0;
 let bottomCount = 0;
 
 // set state for all of the character's catchphrases
-let catchPhrasesEL = 0;
+let catchPhrases = [];
 
 headDropdown.addEventListener('change', (e) => {
     // get the value of the head dropdown
-    const top = e.headDropdown.value;
+    const top = e.target.value;
     //headEL.src = `./assets/${value}-head.png`;
     headEl.style.backgroundImage = `url('../assets/${top}-head.png')`;
     //headEL.src = `./assets/bird-head.png`;
@@ -74,9 +75,10 @@ bottomDropdown.addEventListener('change', () => {
 
 catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
-    const catchP = catchphraseInput.value;
-    catchPhrasesInput.textContent = ' ';
-    
+    const userValue = catchphraseInput.value;
+    catchPhrases.push(userValue);
+    catchphraseInput.value = '';
+    console.log(catchPhrases);
     // push the new catchphrase to the catchphrase array in state
 
     // clear out the form input's value so it's empty to the user
@@ -102,4 +104,4 @@ function displayCatchphrases() {
     // and append that HTML element to the cleared-out DOM
 }
 
-headEL.classList.add('head');
+headEl.classList.add('head');
