@@ -13,20 +13,27 @@ const catchphraseButton = document.getElementById('catchphrase-button');
 
 // set state for how many times the user changes the head, middle, and bottom
 let headCount = 0;
-let middleCount = 0;
-let bottomCount = 0;
+let middEL = 0;
+let bottomEL = 0;
 
 // set state for all of the character's catchphrases
-let catchPhrase = 0;
+let catchPhrasesEL = 0;
 
 headDropdown.addEventListener('change', (e) => {
     // get the value of the head dropdown
     const value = e.target.value;
-    headImg.src = `${value}-head.png`;
+    //headEL.src = `./assets/${value}-head.png`;
+    headEl.style.backgroundImage = `url(../assets/${value}-head.png)`;
+    //headEL.src = `./assets/bird-head.png`;
+    headCount ++;
+    //console.log(headEL);
 
 
 
     // increment the head change count state
+
+     //headEL ++;
+    //console.log(headEL);
     
     // update the dom for the head (use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
 
@@ -82,3 +89,5 @@ function displayCatchphrases() {
     
     // and append that HTML element to the cleared-out DOM
 }
+
+headEL.classList.add('head');
