@@ -38,11 +38,11 @@ headDropdown.addEventListener('change', (e) => {
 });
 
 
-middleDropdown.addEventListener('change', () => {
+middleDropdown.addEventListener('change', (e) => {
         // get the value of the head dropdown
-    const mid = e.middleDropdown.value;
+    const mid = e.target.value;
         //headEL.src = `./assets/${value}-head.png`;
-    middleEl.style.backgroundImage = `url('../assets/${mid}-head.png')`;
+    middleEl.style.backgroundImage = `url('../assets/${mid}-middle.png')`;
         //headEL.src = `./assets/bird-head.png`;
     
     
@@ -56,11 +56,11 @@ middleDropdown.addEventListener('change', () => {
 });
 
 
-bottomDropdown.addEventListener('change', () => {
+bottomDropdown.addEventListener('change', (e) => {
        // get the value of the head dropdown
-    const btm = e.bottomDropdown.value;
+    const btm = e.target.value;
        //headEL.src = `./assets/${value}-head.png`;
-    bottomEl.style.backgroundImage = `url('../assets/${btm}-head.png')`;
+    bottomEl.style.backgroundImage = `url('../assets/${btm}-pants.png')`;
        //headEL.src = `./assets/bird-head.png`;
    
    
@@ -89,11 +89,16 @@ catchphraseButton.addEventListener('click', () => {
 
 function displayStats() {
     // change the text contentof the reportEl to tell the user how many times they've changed each piece of the state
-    const statsString = makeStatsString(); // call this function with the correct arguments
+    const string = makeStatsString(headCount, middleCount, bottomCount); // call this function with the correct arguments
+    reportEl.textContent = string;
+    console.log(string);
+   
 }
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
+    const display = 
+    catchphrasesEl.textContent = display;
 
     // loop through each catchphrase in state
    
