@@ -78,7 +78,8 @@ catchphraseButton.addEventListener('click', () => {
     const userValue = catchphraseInput.value;
     catchPhrases.push(userValue);
     catchphraseInput.value = '';
-    console.log(catchPhrases);
+    displayCatchphrases();
+    //console.log(catchPhrases);
     // push the new catchphrase to the catchphrase array in state
 
     // clear out the form input's value so it's empty to the user
@@ -91,22 +92,38 @@ function displayStats() {
     // change the text contentof the reportEl to tell the user how many times they've changed each piece of the state
     const string = makeStatsString(headCount, middleCount, bottomCount); // call this function with the correct arguments
     reportEl.textContent = string;
-    console.log(string);
+    //console.log(string);
    
 }
 
+
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-    const display = 
-    catchphrasesEl.textContent = display;
+    //const displayC = HTMLElement();
+    catchphrasesEl.textContent = '';
+    for (let catchphrase of catchPhrases){
+        const catchP = document.createElement('catchP');
+        catchP.textContent = catchphrase;
+        catchphrasesEl.append(catchP);
+    }
+    //const catchP = document.createElement('catchP');
+    //catchP.textContent = 
 
+
+    //console.log('hello');
+    //catchPhrases.append();
+
+   // HTMLElement.catchphrasesEl; 
+
+    //catchPhrases.classlist.append('catchphraseEl');
     // loop through each catchphrase in state
    
     // and for each catchphrase
+
     
     // create an HTML element with the catchphrase as its text content
     
     // and append that HTML element to the cleared-out DOM
 }
 
-headEl.classList.add('head');
+//headEl.classList.add('head');
