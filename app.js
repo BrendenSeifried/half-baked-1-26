@@ -102,18 +102,11 @@ function displayCatchphrases() {
     //const displayC = HTMLElement();
     catchphrasesEl.textContent = '';
     for (let catchphrase of catchPhrases){
-        const catchP = document.createElement('catchP');
+        const catchP = document.createElement('p');
         catchP.textContent = catchphrase;
         catchphrasesEl.append(catchP);
     }
-    //const catchP = document.createElement('catchP');
-    //catchP.textContent = 
-
-
-    //console.log('hello');
-    //catchPhrases.append();
-
-   // HTMLElement.catchphrasesEl; 
+    
 
     //catchPhrases.classlist.append('catchphraseEl');
     // loop through each catchphrase in state
